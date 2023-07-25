@@ -40,6 +40,9 @@ agg_df.head()
 agg_df["CUSTOMER_LEVEL_BASED"]=["_".join(i).upper()  for i in agg_df.drop(["AGE","PRICE"], axis=1).values]
 agg_df.head()
 
+agg_df=agg_df.drop(["COUNTRY","SOURCE","SEX","AGE","AGE_CUT"] ,axis=1)
+agg_df.head()
+
 agg_df["SEGMENT"]= pd.qcut(agg_df["PRICE"],4,labels=["D","C","B","A"])
 agg_df.head()
 
